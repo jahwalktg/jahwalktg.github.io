@@ -7,6 +7,7 @@
 - `index.html` — 화면(카드는 tools.js로 그림)
 - `tools.js` — **도구 목록. 새 도구는 여기에만 넣으면 카드·3D 사무실·번호 단추·개수 글자가 함께 바뀜**
 - `office3d.js` — 3D 사무실(three.js r128, cdnjs). WebGL이 안 되면 카드만 보임
+- `og.png` — 카카오톡·문자 등에 주소를 보낼 때 뜨는 미리보기 그림(1200×630, 3D 사무실 화면 + 굿균)
 - `img/*.webp` — 3D 굿균 그림(힉스필드 GPT Image 2.6으로 원래 굿균을 본떠 만듦, 2026-11-09): hello(인사)·walk(걷기)·tools·search·gukgicho·start·guide
 
 ## 새 도구 넣는 법
