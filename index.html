@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>자활 도구 모음</title>
+<meta name="description" content="지역자활센터 실무자·신입·참여자를 위한 무료 도구 다섯 가지 — 업무 도구, 자활 지침 찾기, 국기초 가늠표, 어서와 자활은 처음이지, 자활 참여자 길잡이.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="자활 도구 모음">
+<meta property="og:description" content="실무자·신입·참여자를 위한 자활 도구 다섯 가지를 한 곳에. 누르면 바로 열려요.">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="https://jahwalktg.github.io/">
+<link rel="canonical" href="https://jahwalktg.github.io/">
+<link rel="icon" type="image/webp" href="img/hello.webp">
+<style>
+:root{
+  --bg:#F3F6FC; --surface:#FFFFFF; --line:#D5DDEC; --text:#1A2B50; --muted:#5B6885;
+  --blue:#1A6EFF; --blue-bg:#E8F0FF; --amber:#8A5A00; --amber-bg:#FFF1CC; --amber-line:#E5B93C;
+  --c1:#1A6EFF; --c1b:#E8F0FF;
+  --c2:#0F8A6C; --c2b:#E2F6EF;
+  --c3:#B5541B; --c3b:#FDEEE3;
+  --c4:#7B4BD6; --c4b:#F0E9FD;
+  --c5:#D2366B; --c5b:#FDE8EF;
+  --pic:#FFFFFF;
+  --font:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1630; --surface:#17224A; --line:#2F3F73; --text:#EAF0FF; --muted:#A9B6DA;
+    --blue:#6BA1FF; --blue-bg:#1C2D5E; --amber:#FFD166; --amber-bg:#3A2F10; --amber-line:#8F7420;
+    --c1:#6BA1FF; --c1b:#1C2D5E; --c2:#4FD1A8; --c2b:#123B33; --c3:#FFA36B; --c3b:#40261A;
+    --c4:#B497FF; --c4b:#2C2155; --c5:#FF7FA6; --c5b:#45192B; --pic:#F4F7FF;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1630; --surface:#17224A; --line:#2F3F73; --text:#EAF0FF; --muted:#A9B6DA;
+  --blue:#6BA1FF; --blue-bg:#1C2D5E; --amber:#FFD166; --amber-bg:#3A2F10; --amber-line:#8F7420;
+  --c1:#6BA1FF; --c1b:#1C2D5E; --c2:#4FD1A8; --c2b:#123B33; --c3:#FFA36B; --c3b:#40261A;
+  --c4:#B497FF; --c4b:#2C2155; --c5:#FF7FA6; --c5b:#45192B; --pic:#F4F7FF;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.6;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:anywhere}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+
+/* 머리 */
+.hero{position:relative;overflow:hidden;padding:40px 0 28px}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(2px);opacity:.55;z-index:0}
+.hero::before{width:340px;height:340px;background:var(--c1b);top:-120px;right:-80px}
+.hero::after{width:220px;height:220px;background:var(--c5b);bottom:-90px;left:-60px}
+.hero .wrap{position:relative;z-index:1;display:flex;align-items:center;gap:28px}
+.hero-pic{flex:0 0 auto;width:170px;height:170px;border-radius:50%;background:var(--pic);display:grid;place-items:center;box-shadow:0 10px 30px rgba(26,43,80,.12);animation:bob 3.2s ease-in-out infinite}
+.hero-pic img{width:140px;height:auto}
+.bubble{display:inline-block;background:var(--surface);border:1.5px solid var(--line);border-radius:16px 16px 16px 4px;padding:6px 14px;font-size:15px;font-weight:700;color:var(--blue);margin-bottom:10px}
+h1{margin:0 0 8px;font-size:clamp(28px,5.2vw,44px);line-height:1.25;letter-spacing:-.02em}
+h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--amber-bg) 62%)}
+.lead{margin:0;color:var(--muted);font-size:clamp(16px,2.2vw,18px)}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(2deg)}}
+
+/* 고르기 */
+.pick{margin:8px 0 22px}
+.pick p{margin:0 0 10px;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:15px;font-weight:700;padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--text);cursor:pointer;min-height:44px;transition:transform .15s,background .15s,border-color .15s}
+.chip:hover{transform:translateY(-2px);border-color:var(--blue)}
+.chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+:root[data-theme="dark"] .chip[aria-pressed="true"]{color:#0E1630}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip[aria-pressed="true"]{color:#0E1630}}
+
+/* 카드 */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:18px;padding-bottom:12px}
+.card{--c:var(--c1);--cb:var(--c1b);position:relative;display:flex;flex-direction:column;background:var(--surface);border:1.5px solid var(--line);border-radius:22px;overflow:hidden;transition:transform .2s,box-shadow .2s,opacity .3s;animation:up .5s backwards}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(26,43,80,.14);border-color:var(--c)}
+.card.dim{opacity:.32;transform:scale(.98)}
+.card.dim:hover{transform:scale(.98);box-shadow:none}
+.card:nth-child(2){animation-delay:.07s}.card:nth-child(3){animation-delay:.14s}.card:nth-child(4){animation-delay:.21s}.card:nth-child(5){animation-delay:.28s}
+@keyframes up{from{transform:translateY(16px)}to{transform:none}}
+.top{position:relative;background:var(--cb);padding:18px 18px 14px;display:flex;align-items:flex-end;gap:12px;min-height:118px}
+.num{position:absolute;top:12px;left:16px;font-size:13px;font-weight:800;color:var(--c);letter-spacing:.04em}
+.top h2{margin:18px 0 0;font-size:22px;line-height:1.3;flex:1}
+.top h2 small{display:block;font-size:14px;font-weight:600;color:var(--muted);margin-top:2px}
+.top .pic{flex:0 0 auto;width:84px;height:84px;border-radius:50%;background:var(--pic);display:grid;place-items:center;transition:transform .3s}
+.top .pic img{width:66px;height:auto}
+.card:hover .pic{transform:rotate(-8deg) scale(1.08)}
+.body{padding:14px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.who{display:inline-flex;align-self:flex-start;font-size:13px;font-weight:800;color:var(--c);background:var(--cb);border-radius:999px;padding:3px 10px}
+.body p{margin:0}
+.feats{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.feats li{font-size:13.5px;border:1px solid var(--line);border-radius:8px;padding:2px 9px;color:var(--muted)}
+.note{font-size:14px;background:var(--amber-bg);border-left:4px solid var(--amber-line);border-radius:8px;padding:8px 12px}
+.acts{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;padding-top:4px}
+.go{flex:1 1 auto;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:48px;padding:10px 16px;border-radius:14px;background:var(--c);color:#fff;font-weight:800;text-decoration:none;font-size:16px;transition:filter .15s,gap .15s}
+.go:hover{filter:brightness(1.08);gap:12px}
+.go.sub{background:var(--surface);color:var(--c)!important;border:1.5px solid var(--c)}
+.copy{font:inherit;font-size:14px;font-weight:700;min-height:48px;padding:8px 12px;border-radius:14px;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.copy:hover{border-color:var(--c);color:var(--c)}
+.url{font-size:12.5px;color:var(--muted);word-break:break-all}
+
+/* 아래 */
+.foot{margin:26px 0 40px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;background:var(--surface);border:1.5px solid var(--line);border-radius:22px;padding:20px}
+.foot h3{margin:0 0 6px;font-size:18px}
+.foot p{margin:0 0 10px;color:var(--muted);font-size:15px}
+.foot .btns{display:flex;flex-wrap:wrap;gap:8px}
+.foot .btn{font:inherit;font-weight:800;font-size:15px;min-height:46px;padding:8px 16px;border-radius:12px;border:1.5px solid var(--blue);background:var(--blue);color:#fff;cursor:pointer}
+.foot .btn.line{background:var(--surface);color:var(--blue)}
+#qr{width:132px;height:132px;background:#fff;border-radius:12px;padding:8px;display:grid;place-items:center}
+#qr svg{width:100%;height:100%}
+.about{margin:26px 0 0;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;background:var(--surface);border:1.5px solid var(--line);border-radius:22px;padding:24px;position:relative;overflow:hidden}
+.about::before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:var(--amber-bg);opacity:.7}
+.about>*{position:relative}
+.about .ava{width:120px;height:120px;border-radius:50%;background:var(--blue-bg);display:grid;place-items:center;overflow:hidden}
+.about .ava img{width:112px;height:auto;margin-top:10px}
+.about .lab{display:inline-block;font-size:13px;font-weight:800;color:var(--blue);background:var(--blue-bg);border-radius:999px;padding:3px 10px;margin-bottom:6px}
+.about h3{margin:0 0 4px;font-size:24px;letter-spacing:-.01em}
+.about .role{margin:0 0 12px;color:var(--muted);font-weight:700;font-size:15px}
+.about p{margin:0 0 10px}
+.about .hope{border-left:4px solid var(--amber-line);background:var(--amber-bg);border-radius:8px;padding:10px 14px}
+.about .contact{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.about .contact a,.about .contact button{font:inherit;font-weight:800;font-size:14.5px;min-height:44px;display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:12px;border:1.5px solid var(--blue);color:var(--blue);background:var(--surface);text-decoration:none;cursor:pointer}
+.about .contact a.main{background:var(--blue);color:#fff}
+@media (max-width:640px){.about{grid-template-columns:1fr;padding:20px}.about .ava{width:96px;height:96px}.about .ava img{width:90px}}
+.warn{margin:0 0 14px;font-size:14.5px;color:var(--muted);text-align:center}
+.maker{margin:0 0 40px;text-align:center;font-size:13.5px;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,40px);opacity:0;background:var(--text);color:var(--bg);font-weight:700;padding:10px 18px;border-radius:999px;transition:.25s;pointer-events:none;z-index:9}
+.toast.on{transform:translate(-50%,0);opacity:1}
+@media (max-width:640px){
+  .hero{padding:26px 0 18px}
+  .hero .wrap{flex-direction:column;align-items:flex-start;gap:14px}
+  .hero-pic{width:120px;height:120px}.hero-pic img{width:98px}
+  .foot{grid-template-columns:1fr}
+  #qr{justify-self:center}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* 3D 사무실 */
+.stage{display:none;position:relative;height:min(88vh,760px);min-height:520px;background:linear-gradient(#DCE6F7,#F3F6FC);overflow:hidden;touch-action:pan-y}
+.has3d .stage{display:block}
+.has3d .hero{display:none}
+.stage canvas{display:block;width:100%;height:100%;cursor:grab}
+.stage canvas.hot{cursor:pointer}
+.stage canvas:active{cursor:grabbing}
+.s-title{position:absolute;left:16px;top:16px;max-width:min(520px,calc(100% - 32px));background:rgba(255,255,255,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:18px;padding:14px 18px;box-shadow:0 8px 24px rgba(26,43,80,.12);color:#1A2B50;transition:opacity .4s,transform .4s}
+.s-title b{display:block;font-size:clamp(20px,3.4vw,30px);line-height:1.25;letter-spacing:-.02em}
+.s-title span{font-size:14.5px;color:#5B6885}
+.stage.focus .s-title{opacity:0;transform:translateY(-10px);pointer-events:none}
+.tag3{position:absolute;left:0;top:0;transform:translate(-50%,-100%);display:flex;align-items:center;gap:6px;white-space:nowrap;font:inherit;font-weight:800;font-size:14px;padding:7px 12px 7px 8px;border-radius:999px;border:0;background:#fff;color:#1A2B50;box-shadow:0 6px 18px rgba(26,43,80,.18);cursor:pointer;transition:transform .2s,opacity .3s}
+.tag3 i{font-style:normal;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;color:#fff;font-size:12px}
+.tag3:hover,.tag3.on{transform:translate(-50%,-100%) scale(1.08)}
+.tag3::after{content:"";position:absolute;left:50%;bottom:-6px;margin-left:-6px;border:6px solid transparent;border-bottom:0;border-top-color:#fff}
+.tag3.off{opacity:0;pointer-events:none}
+.s-nav{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;gap:6px;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:6px;border-radius:999px;box-shadow:0 8px 24px rgba(26,43,80,.15);max-width:calc(100% - 24px);overflow-x:auto}
+.s-nav button{flex:0 0 auto;font:inherit;font-weight:800;font-size:14px;border:0;background:transparent;color:#1A2B50;min-width:44px;min-height:40px;padding:0 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.s-nav button.on{background:#1A2B50;color:#fff}
+.s-nav .tour{background:#FFD166}
+.panel{position:absolute;right:16px;top:16px;bottom:76px;width:min(380px,calc(100% - 32px));background:var(--surface);color:var(--text);border-radius:22px;box-shadow:0 14px 40px rgba(26,43,80,.25);overflow:auto;transform:translateX(calc(100% + 40px));transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.panel.on{transform:none}
+.panel .card{border:0;border-radius:0;animation:none;box-shadow:none;transform:none!important;height:auto;min-height:100%}
+.panel .card:hover{transform:none}
+.panel .x{position:absolute;right:10px;top:10px;z-index:2;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.9);font-size:20px;cursor:pointer;color:#1A2B50}
+.s-hint{position:absolute;right:16px;bottom:74px;font-size:12.5px;color:#5B6885;background:rgba(255,255,255,.8);padding:4px 10px;border-radius:999px}
+.stage.focus .s-hint{display:none}
+.to-list{display:none}
+.has3d .to-list{display:block;text-align:center;margin:18px 0 0;font-weight:700;color:var(--muted)}
+@media (max-width:640px){
+  .stage{height:78vh;min-height:500px}
+  .panel{left:12px;right:12px;width:auto;top:auto;bottom:68px;max-height:47%;transform:translateY(calc(100% + 90px))}
+  .s-hint{display:none}
+  .s-title{padding:10px 14px}.s-title span{display:none}
+  .tag3{font-size:12.5px;padding:5px 10px 5px 6px}.tag3 i{width:20px;height:20px;font-size:11px}
+}
+@media print{
+  .stage{display:none!important}.has3d .hero{display:block}
+  body{background:#fff}.chips,.copy,.foot .btns,.toast{display:none}
+  .card{break-inside:avoid;animation:none;opacity:1!important;transform:none!important}
+  .url{color:#333}
+}
+</style>
+</head>
+<body>
+
+<section class="stage" id="stage" aria-label="3D 사무실 둘러보기">
+  <div class="s-title"><b>굿균의 자활 사무실에 오신 걸 환영해요</b><span>책상·책장·상담 탁자… 궁금한 자리를 누르면 굿균이 안내해요. 끌어서 둘러볼 수도 있어요.</span></div>
+  <div id="tags"></div>
+  <aside class="panel" id="panel" aria-live="polite"><button class="x" type="button" id="px" aria-label="닫기">×</button><div id="pbody"></div></aside>
+  <span class="s-hint">마우스로 끌면 사무실이 돌아가요</span>
+  <nav class="s-nav" id="snav" aria-label="자리 고르기">
+    <button type="button" class="tour" data-go="tour">▶ 둘러보기</button>
+    <button type="button" data-go="-1" class="on">전체</button>
+  </nav>
+</section>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-pic"><img src="img/hello.webp" alt="손 흔드는 굿균"></div>
+    <div>
+      <span class="bubble">안녕하세요! 굿균이에요 👋</span>
+      <h1>자활 일, <em>도구 <span class="cnt">다섯</span> 개</em>로<br>조금 더 가볍게</h1>
+      <p class="lead">설치·로그인 없이 누르면 바로 열려요. 실무자·신입·참여자 안내까지 한 곳에 모았어요.</p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <a class="to-list" href="#list" id="list">▼ <span class="cnt">다섯</span> 도구를 목록으로 보기</a>
+  <section class="pick" aria-label="필요한 도구 고르기">
+    <p>지금 무엇이 필요하세요?</p>
+    <div class="chips" id="chips">
+      <button class="chip" type="button" data-f="all" aria-pressed="true">전부 보기</button>
+      <button class="chip" type="button" data-f="work">매일 업무 🧮</button>
+      <button class="chip" type="button" data-f="rule">지침·수급 확인 🔍</button>
+      <button class="chip" type="button" data-f="new">처음 왔어요 🌱</button>
+      <button class="chip" type="button" data-f="part">참여자에게 안내 💌</button>
+    </div>
+  </section>
+
+  <div class="grid" id="grid"></div>
+  <noscript><p>도구 목록을 보려면 자바스크립트를 켜 주세요.</p></noscript>
+
+  <section class="about" id="maker" aria-label="만든 사람 소개">
+    <div class="ava"><img src="img/hello.webp" alt="만든 사람의 캐릭터 굿균"></div>
+    <div>
+      <span class="lab">만든 사람</span>
+      <h3>김태균</h3>
+      <p class="role">서울강남지역자활센터 · 자활전문강사</p>
+      <p>부산서구지역자활센터를 거쳐 지금은 서울강남지역자활센터에서 일하고 있어요. 한국자활복지개발원 자활전문강사 교육을 수료했어요. 제 업무를 조금 편하게 하려고 만들어 쓰던 도구를 다른 센터 실무자와 참여자도 쓸 수 있게 다듬어 나누고 있어요.</p>
+      <p>AI는 이제 쓰지 않을 수 없는 시대예요. 그렇다고 무조건 쓰기보다, <strong>실무자 한 사람과 우리 기관에 맞게 알맞고 올바르게</strong> 쓰는 데 작은 도움이 되고 싶었어요.</p>
+      <p class="hope">이렇게 아낀 시간과 수고가 서류가 아니라 <strong>자활 참여자와 동료에게</strong> 조금 더 가 닿기를, 그래서 모두가 행복한 자활이 되기를 바라요.</p>
+      <div class="contact">
+        <a class="main" href="mailto:jahwalktg@gmail.com">✉ 메일로 문의·의견 보내기</a>
+        <button type="button" id="mailCopy">메일 주소 복사</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="foot" aria-label="이 페이지 나누기">
+    <div>
+      <h3>동료에게 이 페이지를 나눠 주세요</h3>
+      <p>주소 하나만 보내면 <span class="cnt">다섯</span> 도구를 모두 볼 수 있어요.</p>
+      <div class="btns">
+        <button class="btn" type="button" id="share">이 페이지 주소 복사</button>
+        <button class="btn line" type="button" id="all">안내 글 전체 복사</button>
+      </div>
+    </div>
+    <div id="qr" aria-label="이 페이지로 오는 QR코드"></div>
+  </section>
+
+  <p class="warn">※ 모든 도구는 참고용이에요. 정확한 내용은 원문과 관계기관, 전문가에게 꼭 확인해 주세요.</p>
+  <p class="maker">만든 사람: <a href="#maker">서울강남지역자활센터 김태균</a> · 문의 jahwalktg@gmail.com</p>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="tools.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s);};
+  /* 카드 그리기 — 목록은 tools.js */
+  var T=window.JAHWAL_TOOLS||[],K=['','한','두','세','네','다섯','여섯','일곱','여덟','아홉','열'];
+  function esc(x){return String(x==null?'':x).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  document.querySelectorAll('.cnt').forEach(function(e){e.textContent=K[T.length]||T.length;});
+  $('#grid').innerHTML=T.map(function(t,i){
+    var c=t.color||'#1A6EFF',links=t.links||[];
+    return '<article class="card" data-tags="'+esc((t.tags||[]).join(' '))+'" style="--c:'+c+';--cb:color-mix(in srgb,'+c+' 13%,var(--surface))">'
+      +'<div class="top"><span class="num">'+(i<9?'0':'')+(i+1)+'</span><h2>'+esc(t.title)+'<small>'+esc(t.sub)+'</small></h2>'
+      +'<div class="pic"><img src="img/'+esc(t.pic||'hello')+'.webp" alt="" onerror="this.onerror=null;this.src=&#39;img/hello.webp&#39;"></div></div>'
+      +'<div class="body"><span class="who">'+esc(t.who)+'</span><p>'+esc(t.desc)+'</p>'
+      +(t.feats&&t.feats.length?'<ul class="feats">'+t.feats.map(function(f){return '<li>'+esc(f)+'</li>';}).join('')+'</ul>':'')
+      +(t.note?'<p class="note">'+esc(t.note)+'</p>':'')
+      +'<div class="acts">'+links.map(function(l,k){return '<a class="go'+(k?' sub':'')+'" href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label)+' →</a>';}).join('')
+      +(links.length===1?'<button class="copy" type="button" data-u="'+esc(links[0].url)+'">주소 복사</button>':'')+'</div>'
+      +'<span class="url">'+links.map(function(l){return esc(l.url.replace(/^https?:\/\//,'').replace(/\/$/,''));}).join(' · ')+'</span></div></article>';
+  }).join('');
+  var toastT;
+  function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('on');},1600);}
+  function copy(text,msg){
+    function fallback(){var a=document.createElement('textarea');a.value=text;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy');}catch(e){}a.remove();toast(msg);}
+    if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(text).then(function(){toast(msg);},fallback);else fallback();
+  }
+
+  /* 고르기: 맞지 않는 카드는 흐리게 */
+  $('#chips').addEventListener('click',function(e){
+    var b=e.target.closest('.chip');if(!b)return;
+    document.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed',c===b?'true':'false');});
+    var f=b.dataset.f,first=null;
+    document.querySelectorAll('.card').forEach(function(c){
+      var on=f==='all'||c.dataset.tags.split(' ').indexOf(f)>=0;
+      c.classList.toggle('dim',!on);if(on&&!first)first=c;
+    });
+    if(f!=='all'&&first&&window.innerWidth<700)first.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+
+  document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){copy(b.dataset.u,'주소를 복사했어요');});});
+
+  var here=location.protocol.indexOf('http')===0?location.href.split('#')[0]:'https://jahwalktg.github.io/';
+  $('#mailCopy').addEventListener('click',function(){copy('jahwalktg@gmail.com','메일 주소를 복사했어요');});
+  $('#share').addEventListener('click',function(){copy(here,'이 페이지 주소를 복사했어요');});
+
+  $('#all').addEventListener('click',function(){
+    var t=['■ 자활 관련 도구 안내',''];
+    document.querySelectorAll('.card').forEach(function(c,i){
+      var h=c.querySelector('h2').firstChild.textContent.trim();
+      t.push((i+1)+'. '+h);
+      t.push('- '+c.querySelector('.body > p:not(.note)').textContent.trim());
+      c.querySelectorAll('.go').forEach(function(a){t.push('- '+a.textContent.replace('→','').trim()+': '+a.href);});
+      t.push('');
+    });
+    t.push('※ 모든 도구는 참고용입니다. 정확한 내용은 원문과 관계기관, 전문가에게 꼭 확인해 주세요.');
+    t.push('▶ 한눈에 보기: '+here);
+    copy(t.join('\n'),'안내 글을 복사했어요 — 문자·메신저에 붙여 넣으세요');
+  });
+
+  /* 이 페이지로 오는 QR */
+  if(window.qrcode){var q=qrcode(0,'M');q.addData(here);q.make();$('#qr').innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true});}
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="office3d.js"></script>
+</body>
+</html>
