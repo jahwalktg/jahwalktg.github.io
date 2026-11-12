@@ -41,5 +41,13 @@ window.JAHWAL_TOOLS = [
     note: '종사자 화면에서 센터 연락처를 넣으면 참여자용 QR·링크가 만들어져요.',
     links: [{ label: '종사자 화면 열기', url: 'https://jahwalktg.github.io/jahwal-guide/#staff' }],
     tags: ['part'], color: '#D2366B', pic: 'guide', spot: 'counter', navLabel: '참여자'
+  },
+  {
+    id: 'bokjiro', title: '복지제도 찾기', short: '복지제도 찾기', sub: '대상자 조건으로 복지로 제도를', who: '상담 · 사례관리 · 게이트웨이',
+    desc: '나이대·가구 상황·지역을 고르면 복지로에 올라 있는 중앙부처·지자체 제도 가운데 살펴볼 만한 것을 모아 보여 줘요. 참여자에게 맞을 만한 다른 제도를 함께 살펴볼 때 써요. 지원대상·선정기준·신청 방법·문의처까지 원문 그대로.',
+    feats: ['중앙부처·지자체 제도', '복지로 원문 링크', '자료 받은 날짜 표시', '상담 준비 한 장 인쇄', 'AI 주문서', '저장 없음'],
+    note: '복지로 공식 서비스가 아니에요. 공개 자료를 미리 받아 둔 참고용이라 판정하지 않고, 원문과 담당 기관에서 꼭 확인해요.',
+    links: [{ label: '열어 보기', url: 'https://jahwalktg.github.io/bokjiro-search/' }],
+    tags: ['rule'], color: '#0B7285', pic: 'search', spot: 'kiosk', navLabel: '복지제도'
   }
 ];
