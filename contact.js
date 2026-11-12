@@ -43,19 +43,19 @@
   }
   window.JTContact = { formUrl: formUrl, mailUrl: mailUrl, info: info };
   function fix() {
-    var found = 0;
+    var found = 0, forms = 0;
     [].forEach.call(document.querySelectorAll('a[href]'), function (a) {
       var h = a.getAttribute('href');
-      if (OLD.test(h)) { a.href = formUrl(); a.target = '_blank'; a.rel = 'noopener'; found++; }
+      if (OLD.test(h)) { a.href = formUrl(); a.target = '_blank'; a.rel = 'noopener'; found++; forms++; }
       else if (/^mailto:jahwalktg@gmail\.com/i.test(h)) { a.href = mailUrl(h); found++; }
     });
     // 메일 주소가 글자로만 적힌 곳(링크 아님)은 링크로
     [].forEach.call(document.querySelectorAll('[data-jt-contact], #makerLine'), function (el) {
       if (el.querySelector('a') || el.textContent.indexOf(MAIL) < 0) return;
       el.innerHTML = el.innerHTML.replace(MAIL, '<a href="' + mailUrl() + '">' + MAIL + '</a> · <a href="' + formUrl() + '" target="_blank" rel="noopener">의견 설문</a>');
-      found++;
+      found++; forms++;
     });
-    return found;
+    return forms;
   }
   function bar() {
     if (document.getElementById('jtContactBar')) return;
@@ -68,7 +68,7 @@
     var st = document.createElement('style'); st.textContent = '@media print{#jtContactBar{display:none!important}}';
     document.head.appendChild(st); document.body.appendChild(d);
   }
-  function run() { if (!fix()) bar(); }
+  function run() { if (!fix()) bar(); } // 설문 링크가 없는 화면(메일만 있는 곳 포함)에는 맨 아래 한 줄
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
   // 화면이 나중에 그리는 링크(의견 창 등)도 바꾸고, 주소 # 가 바뀌면 화면 이름도 새로
   setTimeout(fix, 1500);
