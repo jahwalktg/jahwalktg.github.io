@@ -64,11 +64,50 @@
     var d = document.createElement('div');
     d.id = 'jtContactBar';
     d.style.cssText = 'margin:28px auto 18px;max-width:960px;padding:10px 16px;text-align:center;font-size:13px;line-height:1.7;color:#6b7280;border-top:1px solid rgba(127,127,127,.25)';
-    d.innerHTML = '이 화면에 대한 의견·문의: <a href="' + formUrl() + '" target="_blank" rel="noopener" style="color:#1a6eff;font-weight:600">의견 보내기(설문)</a> · <a href="' + mailUrl() + '" style="color:#1a6eff">메일 ' + MAIL + '</a>';
-    var st = document.createElement('style'); st.textContent = '@media print{#jtContactBar{display:none!important}}';
-    document.head.appendChild(st); document.body.appendChild(d);
+    d.innerHTML = '이 화면에 대한 의견·문의: <a href="' + formUrl() + '" target="_blank" rel="noopener" style="color:#1a6eff;font-weight:600">의견 보내기(설문)</a> · <a href="' + mailUrl() + '" style="color:#1a6eff">메일 ' + MAIL + '</a>'
+      + '<div style="margin-top:4px;font-size:12.5px">' + UPD + '</div>';
+    printHide(); document.body.appendChild(d);
+    var n = document.getElementById('jtUpdateNote'); if (n) n.remove();
   }
-  function run() { if (!fix()) bar(); } // 설문 링크가 없는 화면(메일만 있는 곳 포함)에는 맨 아래 한 줄
+  /* 업데이트 안내(2026-11-13 태균님): 도구는 의견만이 아니라 해가 바뀐 기준·지침, 고쳐진 원문에 맞춰 수시로 고쳐진다는 것.
+     ① 모든 화면 맨 아래 한 줄(의견·문의 줄이 있으면 그 안에, 없으면 따로) ② 처음 한 번만 뜨는 작은 알림(브라우저에 기억, 모든 사이트 공통)
+     참여자 화면(jahwal-guide)·인쇄물에는 넣지 않음. 문구를 바꾸면 UPD·TOAST만, 다시 한 번 띄우려면 TOAST_ID를 새 값으로. */
+  var UPD = '도구는 해가 바뀐 기준·지침, 고쳐진 원문(지침·법령·복지로 등), 보내 주신 의견을 반영해 수시로 고쳐집니다. 내려받아 둔 파일보다 이 주소로 열어 쓰시고, 중요한 숫자는 원문과 함께 확인해 주세요.';
+  var TOAST_ID = 'upd-2026-11';
+  var isGuide = function () { return location.pathname.split('/').filter(Boolean)[0] === 'jahwal-guide'; };
+  function printHide() {
+    if (document.getElementById('jtContactCss')) return;
+    var st = document.createElement('style'); st.id = 'jtContactCss';
+    st.textContent = '@media print{#jtContactBar,#jtUpdateNote,#jtUpdToast{display:none!important}}'
+      + '#jtUpdToast{position:fixed;left:16px;bottom:16px;z-index:2147483000;max-width:360px;background:#fff;color:#1f2937;border:1px solid rgba(0,0,0,.12);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);padding:14px 16px 12px;font-size:14px;line-height:1.6;font-family:inherit;animation:jtUpdIn .35s ease both}'
+      + '#jtUpdToast b{display:block;font-size:15px;margin-bottom:4px}#jtUpdToast .r{display:flex;gap:8px;justify-content:flex-end;margin-top:10px}'
+      + '#jtUpdToast button{border:0;border-radius:9px;padding:7px 14px;background:#1a6eff;color:#fff;font:inherit;font-weight:700;cursor:pointer}#jtUpdToast a{align-self:center;color:#1a6eff;font-size:13px}'
+      + '@keyframes jtUpdIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}'
+      + '@media (max-width:520px){#jtUpdToast{left:10px;right:10px;bottom:10px;max-width:none}}'
+      + '@media (prefers-color-scheme:dark){#jtUpdToast{background:#1f2937;color:#e5e7eb;border-color:rgba(255,255,255,.15)}}';
+    document.head.appendChild(st);
+  }
+  function note() {
+    if (isGuide() || document.getElementById('jtContactBar') || document.getElementById('jtUpdateNote')) return;
+    var d = document.createElement('div'); d.id = 'jtUpdateNote';
+    d.style.cssText = 'margin:20px auto 16px;max-width:960px;padding:8px 16px;text-align:center;font-size:12.5px;line-height:1.7;color:#6b7280';
+    d.textContent = UPD; printHide(); document.body.appendChild(d);
+  }
+  function toast() {
+    if (isGuide() || window.top !== window.self) return;
+    var seen = ''; try { seen = localStorage.getItem('jt.updToast') || ''; } catch (e) { return; }
+    if (seen === TOAST_ID) return;
+    setTimeout(function () {
+      if (document.getElementById('jtUpdToast')) return;
+      printHide();
+      var t = document.createElement('div'); t.id = 'jtUpdToast'; t.setAttribute('role', 'status');
+      t.innerHTML = '<b>수시로 고쳐지는 도구예요</b>해가 바뀌어 기준·지침이 달라지거나 원문이 고쳐지면, 그리고 보내 주신 의견이 있으면 도구도 그때그때 고쳐집니다. 즐겨찾기해 둔 이 주소로 열면 늘 최신 내용이에요.'
+        + '<div class="r"><a href="' + formUrl() + '" target="_blank" rel="noopener">의견 보내기</a><button type="button">알겠어요</button></div>';
+      t.querySelector('button').onclick = function () { try { localStorage.setItem('jt.updToast', TOAST_ID); } catch (e) {} t.remove(); };
+      document.body.appendChild(t);
+    }, 2500);
+  }
+  function run() { if (!fix()) bar(); else note(); toast(); } // 설문 링크가 없는 화면(메일만 있는 곳 포함)에는 맨 아래 한 줄, 있으면 업데이트 안내 한 줄만
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
   // 화면이 나중에 그리는 링크(의견 창 등)도 바꾸고, 주소 # 가 바뀌면 화면 이름도 새로
   setTimeout(fix, 1500);
