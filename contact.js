@@ -17,6 +17,7 @@
     'jahwal-start': '4번 어서와 자활은 처음이지',
     'jahwal-buddy': '5번 AI 동료 유형',
     'jahwal-search': '6번 자활 지침 찾기',
+    'jahwal-motion': '7번 즉석 모션그래픽',
     'welfare': '사회복지 도구 모음',
     'welfare-tools': '사회복지사 업무 도구',
     'welfare-search': '사회복지 지침 찾기',

@@ -49,5 +49,13 @@ window.JAHWAL_TOOLS = [
     note: '복지로 공식 서비스가 아니에요. 공개 자료를 미리 받아 둔 참고용이라 판정하지 않고, 원문과 담당 기관에서 꼭 확인해요.',
     links: [{ label: '열어 보기', url: 'https://jahwalktg.github.io/bokjiro-search/' }],
     tags: ['rule'], color: '#0B7285', pic: 'search', spot: 'kiosk', navLabel: '복지제도'
+  },
+  {
+    id: 'motion', title: '즉석 모션그래픽', short: '모션그래픽', sub: '로고·글자만 바꿔 바로 GIF·MP4로', who: '행사 담당 · 발표 준비',
+    desc: '행사 화면과 PPT에 넣을 움직이는 장면 70가지. 국민의례(음원)·시상·호명·카운트다운·타이머·숫자 올라가기·조직도·명절 인사까지 글자만 바꿔 1~2분에 받아요. 급할 땐 전체화면으로 바로 재생, 여러 장면은 골라 담아 PPT 한 파일로.',
+    feats: ['장면 70가지', '디자인 테마 7종', 'MP4·GIF·PNG', '전체화면 재생', 'PPT 묶음', '국민의례 음원'],
+    note: '설치·로그인 없이 브라우저에서 바로 만들어요. 입력한 글·사진은 어디에도 보내지 않아요.',
+    links: [{ label: '열어 보기', url: 'https://jahwalktg.github.io/jahwal-motion/' }],
+    tags: ['work'], color: '#7C3AED', pic: 'hello', spot: 'board', navLabel: '모션'
   }
 ];
