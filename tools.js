@@ -4,7 +4,7 @@
    2) spot(3D 사무실의 물건): desk 책상 · shelf 책장 · table 상담 탁자 · board 칠판 · counter 안내 데스크 · kiosk 세움 화면(새 도구 기본)
    3) pic: img/ 안의 굿균 그림 이름(없으면 hello). tags: work 매일 업무 · rule 지침·수급 · new 처음 · part 참여자
    4) navLabel: 3D 화면 아래 번호 단추에 쓸 짧은 이름(없으면 short의 첫 낱말)
-   5) 사무실 자리는 들어온 순서대로 자동 배치(최대 8개). 순서를 바꾸면 자리도 바뀜. */
+   5) 사무실 자리는 들어온 순서대로 자동 배치(최대 9개). 순서를 바꾸면 자리도 바뀜. */
 window.JAHWAL_TOOLS = [
   {
     id: 'tools', title: '지역자활센터 업무 도구', short: '업무 도구', sub: '실무자 도구 모음', who: '실무자',
@@ -65,5 +65,13 @@ window.JAHWAL_TOOLS = [
     note: '설치·로그인 없이 브라우저에서 바로. 넣은 파일은 어디에도 보내지 않아요.',
     links: [{ label: '열어 보기', url: 'https://jahwalktg.github.io/jahwal-office/' }],
     tags: ['work'], color: '#1D7A46', pic: 'tools', spot: 'desk', navLabel: '한엑피'
+  },
+  {
+    id: 'wizard', title: '문서 변신 마법사', short: '(문서)변신 마법사', sub: '문서 양식 변신시키기 — 재료를 모아 내 양식에 담기', who: '명단·대장·서식 작성',
+    desc: '흩어진 엑셀·한글 재료를 넣으면 알아서 구분해 바구니에 담고, 우리 기관이 쓰는 양식(그릇)을 넣으면 그 모양에 맞춰 채워 줘요. 비상연락망·물품 현황표 같은 목록도, 한 사람에 한 장인 카드·확인서도. 애매한 칸은 노랗게 표시해 확인받아요.',
+    feats: ['재료 여러 개 한 번에', '알아서 구분·합치기', '내 양식 그대로 채우기', '한 사람에 한 장', '40초 시연'],
+    note: '설치·로그인 없이 브라우저에서 바로. 넣은 파일은 어디에도 보내지 않아요. 처음 공개라 여러분의 사용 사례로 계속 고쳐 가요.',
+    links: [{ label: '열어 보기', url: 'https://jahwalktg.github.io/jahwal-wizard/' }],
+    tags: ['work'], color: '#B45309', pic: 'tools', spot: 'kiosk', navLabel: '문서변신'
   }
 ];

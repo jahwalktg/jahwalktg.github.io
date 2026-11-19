@@ -13,7 +13,7 @@
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var cards = [].slice.call(document.querySelectorAll('#grid .card'));
 
-  /* 자리 8곳 (위치·앞쪽 방향). 도구가 들어온 순서대로 앉음 */
+  /* 자리 9곳 (위치·앞쪽 방향). 도구가 들어온 순서대로 앉음 */
   var SLOTS = [
     { p: [-6, -4.4], f: [0.25, 1] },
     { p: [-0.2, -6.9], f: [0, 1] },
@@ -22,7 +22,8 @@
     { p: [5.4, 3.6], f: [-0.55, 1] },
     { p: [9.6, -0.6], f: [-1, 0.25] },
     { p: [-5.2, 5.6], f: [0.35, 1] },
-    { p: [0.6, 6.4], f: [0, 1] }
+    { p: [0.6, 6.4], f: [0, 1] },
+    { p: [10.0, -5.6], f: [-1, 0.55] }
   ];
   T = T.slice(0, SLOTS.length);
   var HUB = [0, 0.9];   /* 굿균이 자리 사이를 오갈 때 거치는 사무실 가운데 */
