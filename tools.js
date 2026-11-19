@@ -57,5 +57,13 @@ window.JAHWAL_TOOLS = [
     note: '설치·로그인 없이 브라우저에서 바로 만들어요. 입력한 글·사진은 어디에도 보내지 않아요.',
     links: [{ label: '열어 보기', url: 'https://jahwalktg.github.io/jahwal-motion/' }],
     tags: ['work'], color: '#7C3AED', pic: 'hello', spot: 'board', navLabel: '모션'
+  },
+  {
+    id: 'office', title: '뚝딱 한엑피 공방', short: '한엑피', sub: '한글·엑셀·PPT 반복 일을 뚝딱', who: '보고서·행사 사진·발표 자료',
+    desc: '엑셀에서 복사한 표를 합친 칸·숫자 쉼표·합계 줄까지 갖춘 한글 표로, 사진 폴더를 찍은 순서대로 PPT 앨범으로, 메일로 안 가는 무거운 PPT·한글 파일은 사진만 줄여 가볍게. 도구는 계속 늘어나요.',
+    feats: ['엑셀 표 → 한글 표', '사진 앨범 PPT', 'PPT 용량 줄이기', '합친 칸 그대로', '폴더째 넣기'],
+    note: '설치·로그인 없이 브라우저에서 바로. 넣은 파일은 어디에도 보내지 않아요.',
+    links: [{ label: '열어 보기', url: 'https://jahwalktg.github.io/jahwal-office/' }],
+    tags: ['work'], color: '#1D7A46', pic: 'tools', spot: 'desk', navLabel: '한엑피'
   }
 ];
